@@ -1,3 +1,8 @@
+---
+title: Development Tools
+layout: default
+---
+
 Development Tools
 =================
 This page exists as my soapbox for listing various resources I recommend (along with some I don't, but I believe in options, so...)

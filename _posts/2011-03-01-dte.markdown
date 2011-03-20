@@ -1,6 +1,8 @@
 ---
 title: Developer Tidbits Exchange
+layout: default
 ---
+
 What the f*!& is DTE?!
 ======================
 DTE is not an organization, but rather an action. It's taking an envelope, sticking something small, preferably local, but definitely not money in it, and sending to the developer who helped you.

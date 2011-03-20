@@ -1,3 +1,8 @@
+---
+title: Why use SCM?
+layout: default
+---
+
 Why use SCM?
 ============
 Before we get started into why use scm, better to start with the question of what it is.
