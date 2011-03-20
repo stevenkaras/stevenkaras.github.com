@@ -1,8 +1,6 @@
 Steven Karas's Personal Pages
-{% if post %}
-	{% capture post_categories_size %}{{ post.categories | size }}{% endcapture %}
-	size={{ post_categories_size }}
-	{% if post_categories_size > 0 %}
+{% if post != null %}
+	{% if post.categories == empty %}
 		| {{ post.categories | array_to_sentence_string }}
 	{% endif %}
 {% endif %}
