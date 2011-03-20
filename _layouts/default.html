@@ -4,22 +4,22 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="Content-Language" content="en-us" />
-		<title>{{ post.title }}</title>
+		<title>{{ page.title }}</title>
 		<link rel="stylesheet" type="text/css" href="/css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="/css/base.css" />
 	</head>
 	<body>
 		<div class='container'>
-			<div class='header'>{% include header.markdown %}</div>
+			<div class='header'></div>
 		</div>
 		<hr />
 		<div class='container'>
 			<div class='content'>
-				{{ content }}
+				{{ page.content }}
 			</div>
 		</div>
 		<div class='container'>
-			<div class='footer'>{% include footer.markdown %}</div>
+			<div class='footer'></div>
 		</div>
 	</body>
 </html>
