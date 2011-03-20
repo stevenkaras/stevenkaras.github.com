@@ -1,32 +1,23 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Developer Tidbits Exchange</title>
-<meta charset="UTF-8">
-<style type="text/css">
-.address {
-	font-family : "Sans";
-	font-size : 16pt;
-	font-weight : "heavier";
-}
-</style>
-</head>
-<body>
-<h2>What the f*!& is DTE?!</h2>
+---
+title: Developer Tidbits Exchange
+---
+What the f*!& is DTE?!
+======================
 DTE is not an organization, but rather an action. It's taking an envelope, sticking something small, preferably local, but definitely not money in it, and sending to the developer who helped you.
-<p>
-<h2>Why should I get involved?</h2>
+
+Why should I get involved?
+==========================
 Ever gotten help from a fellow developer? Have you ever wondered how to show your appreciation? Next time, rather than simply writing words of praise and appreciation, consider partaking in DTE (Developer Tidbits Exchange).
-<p>
-<h2>Peer pressure works, so I'm applying it!</h2>
+
+Peer pressure works, so I'm applying it!
+========================================
 In an effort to promote this practice, I will reciprocate any envelopes I receive with my own, and take the initiative to send envelopes to developers who have helped me in the past.
-<p>
+
 So man up already, and send me an envelope!
-<p class="address">
-Steven Karas<br />
-PO Box 5707<br />
-Herzliyah 46156<br />
+
+~~~~~~~~~~~~~~~~~~
+Steven Karas
+PO Box 5707
+Herzliyah 46156
 Israel
-</p>
-</body>
-</html>
+~~~~~~~~~~~~~~~~~~

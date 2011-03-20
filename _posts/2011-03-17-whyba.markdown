@@ -1,0 +1,39 @@
+Why use Build Automation?
+=========================
+Before we get started into why use build automation, better to start with the question of what it is.
+
+So what is BA?
+--------------
+Build Automation is just that. Automating your build process. That means everything from initially compiling the code to zipping it into an archive and emailing a copy to your TA, uploading it to your website, and sending an email to your boss telling him to check the latest update.
+
+Most of the time, though, you'll just use it to compile your program automatically.
+
+Some Terminology
+----------------
+Build Artifact
+:	A build artifact is any file created by the build process. Usually, it's referring to the end product (jar, exe, zip).
+
+Deployment
+:	Deployment is when you upload the build artifact of a project to a server.
+
+Continuous Integration
+:	Continuous integration is a concept where you automatically build your project and run a test suite on it (typically larger test suites that ensure basic functionality). There are many products that do this.
+
+Distributable Artifact
+:	A single build artifact that contains all the necessary components to run the project.
+
+So why use it?
+--------------
+3 reasons:
+
+1. Build automation makes your life easier, since you spend less time copy and pasting files, renaming folders, zipping things, and then sending them via email.
+2. Build automation means anyone in your team can build the project, since it doesn't require any special knowledge (beyond knowing the build system).
+3. Build automation is an industry standard. Knowledge is power, and this is powerful knowledge.
+
+Types of BA
+===========
+Each platform/language usually has its own build automation system:
+
+* Java
+	* [Apache Ant](DevTools.md#BA-ANT)
+	* [Maven](DevTools.md#DM-MVN)
