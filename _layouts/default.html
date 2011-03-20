@@ -5,20 +5,21 @@
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="Content-Language" content="en-us" />
 		<title>{{ post.title }}</title>
-		<link rel="stylesheet" type="text/css" href="/base.css" />
+		<link rel="stylesheet" type="text/css" href="/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="/css/base.css" />
 	</head>
 	<body>
 		<div class='container'>
-			<div class=''>{% include header.markdown %}</div>
+			<div class='header'>{% include header.markdown %}</div>
 		</div>
 		<hr />
 		<div class='container'>
-			<div class=''>
+			<div class='content'>
 				{{ content }}
 			</div>
 		</div>
 		<div class='container'>
-			<div class=''>{% include footer.markdown %}</div>
+			<div class='footer'>{% include footer.markdown %}</div>
 		</div>
 	</body>
 </html>
