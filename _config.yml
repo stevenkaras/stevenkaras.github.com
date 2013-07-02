@@ -2,3 +2,4 @@ permalink: /:categories/:title
 pygments: true
 
 future: false
+exclude: [ 'Gemfile', 'Gemfile.lock' ]
