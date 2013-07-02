@@ -118,13 +118,13 @@ nav ul li {
   padding-left: 15px;
 }
 
-nav ul a {
+nav.nav_blog ul a {
   font-size:11px;
   color:#999;
   padding-top:4px;
 }
 
-nav ul a:hover {
+nav.nav_blog ul a:hover {
   color:#069;
 }
 
