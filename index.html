@@ -11,7 +11,7 @@ Grab my <a href="{{ site.url }}/downloads/resume.pdf">CV</a>
 <p>
   <h1 class="section_header">Recent Blog Posts</h1>
   {% for post in site.categories.blog limit:3 %}
-    <p class="post_excerpt"><strong><a href="{{ post.url }}">{{ post.title }}</a></strong> <span class="post_date">Posted on {{ post.date }}</span>
+    <p class="post_excerpt"><strong><a href="{{ post.url }}">{{ post.title }}</a></strong> <span class="post_date">Posted on {{ post.date | date_to_string }}</span>
       <p>
         {{ post.excerpt }}
       </p>
