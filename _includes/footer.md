@@ -1,1 +1,0 @@
-(c) {{ site.time | date: "%Y" }} Steven Karas

@@ -110,6 +110,11 @@ header {
   position:fixed;
 }
 
+header ul {
+  list-style: square;
+  padding: 0;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
@@ -222,10 +227,6 @@ footer {
 @media print, screen and (max-width: 480px) {
   body {
     padding:15px;
-  }
-
-  header ul {
-    display:none;
   }
 }
 
