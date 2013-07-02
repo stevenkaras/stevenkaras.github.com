@@ -2,9 +2,13 @@
 layout: default
 title: Blog Post List
 ---
-
-<ul class="post_list">
+<p>
+  <h1 class="section_header">All Blog Posts</h1>
+  <ul class="post_list">
   {% for post in site.categories.blog %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <li><strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
+      <span class="post_date">Posted on {{ post.date | date_to_string }}</span>
+    </li>
   {% endfor %}
-</ul>
+  </ul>
+</p>
