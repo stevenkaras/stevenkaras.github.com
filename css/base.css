@@ -140,6 +140,14 @@ section {
   padding-bottom:50px;
 }
 
+p.post_excerpt strong {
+  font-size: 20px;
+}
+
+p.post_excerpt span.post_date {
+  float:right;
+}
+
 small {
   font-size:11px;
 }

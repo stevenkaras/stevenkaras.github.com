@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>BitRot | {{ page.title }}</title>
+    <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class='wrapper'>
+      <header>
+        {% include header.md %}
+        {% include nav-pages.html %}
+        {% include nav-blog.html %}
+      </header>
+      <section>
+        <h1>{{ page.title }}</h1>
+        <div class="content">
+            {{ content }}
+        </div>
+      </section>
+      <footer>{% include footer.md %}</footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+  </body>
+</html>
