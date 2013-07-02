@@ -1,0 +1,10 @@
+---
+layout: default
+title: Blog Post List
+---
+
+<ul class="post_list">
+  {% for post in site.categories.blog %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
