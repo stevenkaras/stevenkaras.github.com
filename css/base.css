@@ -204,10 +204,18 @@ footer {
   }
 
   header ul {
-    position:absolute;
     right:50px;
     top:52px;
   }
+
+  nav.nav_pages ul li {
+    display:inline;
+  }
+
+  nav.nav_blog {
+    display:none;
+  }
+
 }
 
 @media print, screen and (max-width: 720px) {
