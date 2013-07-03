@@ -54,11 +54,6 @@ a:hover small {
   color:#777;
 }
 
-.wrapper {
-  width:860px;
-  margin:0 auto;
-}
-
 blockquote {
   border-left:1px solid #e5e5e5;
   margin:0;
@@ -139,8 +134,13 @@ strong {
   font-weight:700;
 }
 
+.wrapper {
+  width:1060px;
+  margin:0 auto;
+}
+
 section {
-  width:500px;
+  width:700px;
   float:right;
   padding-bottom:50px;
 }
@@ -173,6 +173,24 @@ footer {
   float:left;
   position:fixed;
   bottom:50px;
+}
+
+@media print, screen and (max-width: 1180px) {
+  div.wrapper {
+    width:860px;
+  }
+
+  section {
+    width:500px;
+  }
+
+  header {
+    width:270px;
+  }
+
+  footer {
+    width:270px;
+  }
 }
 
 @media print, screen and (max-width: 960px) {
