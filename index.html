@@ -6,9 +6,6 @@ title: Home
 Steven Karas's personal site and blog.
 </p>
 <p>
-Grab my <a href="{{ site.url }}/downloads/resume.pdf">CV</a>
-</p>
-<p>
   <h1 class="section_header">Recent Blog Posts</h1>
   {% for post in site.categories.blog limit:3 %}
     <p class="post_excerpt"><strong><a href="{{ post.url }}">{{ post.title }}</a></strong> <span class="post_date">Posted on {{ post.date | date_to_string }}</span>
