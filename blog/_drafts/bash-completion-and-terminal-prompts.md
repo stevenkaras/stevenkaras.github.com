@@ -8,4 +8,4 @@ For example, when I needed a framework to quickly create Ruby command line inter
 
 Personally, at work, I have several projects that I have open in different terminal windows (or tabs). Each of these projects is versioned, but some are done so using svn, and others git. Moreover, I have a few subprojects, and even a few git-svn repos, that have multiple subprojects within them. So I came up with my framework to help you determine the root path of the current project (really the root of the current versioned directory), and provides several useful extension points for adding hooks, listening to events, etc.
 
-For example, I have a quick PROMPT_COMMAND that checks if the directory has changed. If it has, it runs the DIR_CHANGE_COMMANDS.
+For example, I have a PROMPT_COMMAND that checks if the directory has changed. If it has, it runs the DIR_CHANGE_COMMANDS.
