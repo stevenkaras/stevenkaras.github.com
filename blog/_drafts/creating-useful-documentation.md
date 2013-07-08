@@ -2,9 +2,7 @@
 title: Creating useful documentation
 layout: post
 ---
-Documenting your work is quite possibly the most painful part of being a developer. The closest contender would be reading another developer's documentation. Part of the problem is that documentation often violates the single source of truth principle, so you'll be working with version 4.5 of a project, and reading documentation that is either labelled for a different version, or worse, unlabelled.
-
-This creates confusion, which is exactly what documentation is supposed to do away with. So let's explore some ways to approach this problem and hopefully solve it (at least partially).
+Documenting your work is quite possibly the most painful part of being a developer. The closest contender would be reading another developer's documentation. Part of the problem is that documentation often violates the single source of truth principle, so you'll be working with version 4.5 of a project, and reading documentation that is either labelled for a different version, or worse yet, unlabelled. This creates confusion, which is exactly what documentation is supposed to do away with. So let's explore some ways to approach this problem and hopefully solve it (at least partially).
 
 Since we can't control multiple documentation sources, such as a series of badly written blog posts, let's focus on the use case where all the documentation is on one server. Let's also assume that the developer is actively writing the documentation, and that those docs are updated in real time for the latest version.
 

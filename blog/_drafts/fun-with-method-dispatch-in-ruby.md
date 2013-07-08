@@ -28,4 +28,3 @@ end
 {% endhighlight %}
 
 Grab the [gem](https://rubygems.org/gems/ladder), fork my [code](https://github.com/stevenkaras/ladder), or leave a comment about how evil this code is and how it should burn in the fiery pits of hell.
-
