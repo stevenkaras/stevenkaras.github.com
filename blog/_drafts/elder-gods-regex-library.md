@@ -29,9 +29,10 @@ As some people have pointed out, writing a regular expression to parse some of t
 
 {% highlight ruby %}
 %r{
-    (?<identifier>   \g<IDENTIFIER> ){0}
-    (?<>){0}
-    (?<>){0}
+    (?<unicode_raw>        ){0}
+    (?<identifier>         (?!\g<keyword>)\g<identifier_chars> ){0}
+    (?<identifier_chars>   ){0}
+    (?<keyword>            abstract | continue | for | new | switch | assert | default | if | package | synchronized | boolean | do | goto | private | this | break | double | implements | protected | throw | byte | else | import | public | throws | case | enum | instanceof | return | transient | catch | extends | int | short | try | char | final | interface | static | void | class | finally | long | strictfp | volatile | const | float | native | super | while ){0}
     (?<>){0}
     (?<>){0}
     (?<>){0}
