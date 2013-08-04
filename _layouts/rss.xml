@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>{{ site.name }}</title>
+		{% if site.description %}
+		<description>{{ site.description }}</description>
+		{% endif %}
+		<language>en-us</language>
+		<pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
+		<lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
+
+		<link>{{ site.url }}</link>
+		<atom:link href="{{ site.url }}{{ page.url }}" rel="self" type="application/rss+xml" />
+
+		{{ content }}
+	</channel>
+</rss>

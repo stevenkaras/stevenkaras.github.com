@@ -1,0 +1,24 @@
+---
+layout: atom
+---
+{% for post in site.posts limit:20 %}
+<entry>
+	<title type="html"><![CDATA[{{ post.title }}]]></title>
+	<author>
+		{% if post.author %}
+		<name><![CDATA[{{ post.author }}]]></name>
+		{% else %}
+		<name><![CDATA[{{ site.author }}]]></name>
+		{% endif %}
+	</author>
+	<id>{{ site.url }}{{ post.id }}</id>
+
+	<link rel="alternate" type="text/html" href="{{ site.url }}{{ post.url }}" />
+
+	<updated>{{ post.date | date_to_xmlschema }}</updated>
+
+	<content type="html">
+		<![CDATA[{{ post.content }}]]>
+	</content>
+</entry>
+{% endfor %}
