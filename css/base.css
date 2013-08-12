@@ -175,6 +175,10 @@ footer {
   bottom:50px;
 }
 
+div.share_widgets {
+	float:right;
+}
+
 @media print, screen and (max-width: 1180px) {
   div.wrapper {
     width:860px;

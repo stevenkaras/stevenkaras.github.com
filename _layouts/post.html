@@ -23,6 +23,7 @@
       </header>
       <section>
         <h1>{{ page.title }}</h1>
+        <div>By Steven Karas <div class="share_widgets"><div class="g-plusone" data-size="medium" data-href="{{ site.url }}{{ page.url }}"></div></div></div>
         <div class="content">
             {{ content }}
         </div>
@@ -30,5 +31,12 @@
       <footer>{% include footer.html %}</footer>
     </div>
     <script src="/javascripts/scale.fix.js"></script>
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
   </body>
 </html>
