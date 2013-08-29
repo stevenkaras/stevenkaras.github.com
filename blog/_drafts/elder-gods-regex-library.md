@@ -7,7 +7,7 @@ As [some people have pointed out](http://stackoverflow.com/a/1732454), writing a
 ### String literals on one line:
 
 {% highlight ruby %}
-/^" ([^"\\]* | \\ ["\\bfnrt\/] | \\ u\h{4} | \\ [0-7]{3} | \\ x\h{2} )* "$/x
+/^" ([^"\\] | \\ ["\\bfnrt\/] | \\ u\h{4} | \\ [0-7]{3} | \\ x\h{2} )* "$/x
 {% endhighlight %}
 
 ### JSON:
