@@ -95,4 +95,6 @@ For single line regexes:
 }x
 {% endhighlight %}
 
+### A word from our sponsors
+
 > ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn
