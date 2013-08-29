@@ -2,7 +2,7 @@
 title: Fun with method dispatch in Ruby
 layout: post
 ---
-I got bored today waiting for my code to compile, and wrote a quick gem with a mixin that enables declarative programming in Ruby. Given Ruby's functional roots, this gives Ruby a very different feel, and really just made me feel like it should be part of the language. Surprisingly, this little mixin is just that. Little.
+I got bored today waiting for my code to compile, and wrote a mixin that enables declarative programming in Ruby. Given Ruby's functional roots, this gives Ruby a very different feel, and really just made me feel like it should be part of the language. Surprisingly, this little mixin is just that. Little.
 
 I started this project knowing what I wanted it to do, and how I wanted the result to look like (always a good approach, in my experience). Once I finished the code (well after my compile had finished), I was pleasantly surprised to see that all the code for the gem fit onto one screen (albeit without some essential features).
 
@@ -27,4 +27,58 @@ class Example
 end
 {% endhighlight %}
 
-Grab the [gem](https://rubygems.org/gems/ladder), fork my [code](https://github.com/stevenkaras/ladder), or leave a comment about how evil this code is and how it should burn in the fiery pits of hell.
+Here's the mixin source:
+
+{% highlight ruby %}
+# Provides a simple API for declaring method dependencies
+module Ladder
+  # @api private
+  # Automatically extends the singleton with {ClassMethods}
+  def self.included(base)
+    base.send :extend, ClassMethods
+  end
+
+  # @api private
+  # Automatically extends the singleton with {ClassMethods}
+  def self.prepended(base)
+    base.send :extend, ClassMethods
+  end
+
+  # This module provides methods for any class that includes Ladder
+  module ClassMethods
+
+    # @api private
+    # Get the ladder configuration
+    def ladder
+      @ladder ||= {
+        :commands => {}
+      }
+    end
+
+    # @api private
+    # Registers a method as a ladder method
+    def method_added(method)
+      return unless ladder[:next]
+      ladder[:commands][method] = ladder[:next]
+      ladder[:next] = nil
+      alias_method "__ladder_#{method}", method
+      define_method method do |*args|
+        self.class.ladder[:commands][method][:needs].each do |need|
+          self.send(need)
+        end
+        self.send "__ladder_#{method}", *args
+      end
+    end
+
+    # Declare that the next method defined needs another method/s executed beforehand
+    #
+    # @param prereqs [<#to_s>] list of the needed methods
+    def needs(*prereqs)
+      ladder[:next] ||= {
+        :needs => []
+      }
+      ladder[:next][:needs] |= prereqs.map(&:to_s)
+    end
+  end
+end
+{% endhighlight %}
