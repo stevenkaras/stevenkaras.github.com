@@ -50,21 +50,36 @@ This matches most single line regular expressions. It isn't perfect (note the im
 
 XML 1.1 (from the [standard](http://www.w3.org/TR/xml11/))
 
+This one frustated me a bit. Turns out the W3C uses SEBNF, which includes some confusing syntax. In general, you can replace a rule with a call to the relevant group, and exclusion groups into negative lookaheads.
+
 {% highlight ruby %}
 %r{
-  (?<document>        \g<prolog> \g<element> \g<misc>* ){0}
-  (?<char>            [\u{1}-\u{d7ff}] | [\u{e000}-\u{fffd}] | [\u{10000}-\u{10ffff}] ){0}
-  (?<restricted_char> [\x01-\x08] | [\x0b-\x0c] | [\x0e-\x1f] | [\x7f-\x84] | [\x86-\x9f] ){0}
-  (?<whitespace>      [\x20\x09\x0d\x0a]+ ){0}
-  (?<name_start_char> : | [A-Z] | _ | [a-z] | [\xc0-\xd6] | [\xd8-\xf6] | [\u{f8}-\u{2ff}]
+  (?<document>        (?! \g<Char>* \g<RestrictedChar> \g<Char>* )
+                      \g<prolog> \g<element> \g<Misc>* ){0}
+  (?<Char>            [\u{1}-\u{d7ff}] | [\u{e000}-\u{fffd}] | [\u{10000}-\u{10ffff}] ){0}
+  (?<RestrictedChar> [\x01-\x08] | [\x0b-\x0c] | [\x0e-\x1f] | [\x7f-\x84] | [\x86-\x9f] ){0}
+  (?<Whitespace>      [\x20\x09\x0d\x0a]+ ){0}
+  (?<NameStartChar> : | [A-Z] | _ | [a-z] | [\xc0-\xd6] | [\xd8-\xf6] | [\u{f8}-\u{2ff}]
     | [\u{370}-\u{37d}] | [\u{37f}-\u{1fff}] | [\u{200c}-\u{200d}] | [\u{2070}-\u{218f}]
     | [\u{2c00}-\u{2fef}] | [\u{3001}-\u{d7ff}] | [\u{f900}-\u{fdcf}] | [\u{fdf0}-\u{fffd}]
     | [\u{10000}-\u{effff}] ){0}
-  (?<name_char>       \g<name_start_char> | - | \. |  ){0}
-  (?<name>            ){0}
-  (?<names>           ){0}
-  (?<name_token>      ){0}
-  (?<name_tokens>     ){0}
+  (?<NameChar>       \g<NameStartChar> | - | \. |  ){0}
+  (?<Name>           \g<NameStartChar> (?:\g<NameChar>)* ){0}
+  (?<Names>          \g<Name> (?: \x20 \g<Name>)* ){0}
+  (?<NameToken>      \g<NameChar>+ ){0}
+  (?<NameTokens>     \g<NameToken> (?: \x20 \g<NameToken>)* ){0}
+  (?<EntityValue>    " ([^%&"] | \g<PEReference> | \g<Reference>)* "
+    |                ' ([^%&'] | \g<PEReference> | \g<Reference>)* ' ){0}
+  (?<AttValue>       " ([^<&"] | \g<Reference> )* "
+    |                ' ([^<&'] | \g<Reference> )* ' ){0}
+  (?<SystemLiteral>  " [^"]* " | ' [^']* ' ){0}
+  (?<PubidLiteral>   " \g<PubidChar>* " | ' (?: (?! ' ) \g<PubidChar> )* ' ){0}
+  (?<PubidChar>      \x20 | \x0d | \x0a | [a-zA-Z0-9] | [-'()+,./:=?;!*#@$_%] ){0}
+  # CharData is a problem to parse. I'll have to think about how to go about fixing this.
+  (?<CharData>       [^<&]* (?= \]\]> ) ){0}
+  (?<Comment>        <!-- ((\g<Char> - -) | (- )) -->)
+
+  # you can continue this one on your own, but I'm calling it quits here. The grammar isn't specified in a manner that makes it easy to translate to the regexp syntax
 }
 {% endhighlight %}
 
