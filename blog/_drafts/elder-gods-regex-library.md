@@ -26,15 +26,23 @@ As [some people have pointed out](http://stackoverflow.com/a/1732454), writing a
 }ix
 {% endhighlight %}
 
-### Java 1.7:
+### A Regex for A Regex
+
+This matches most single line regular expressions. It isn't perfect (note the improper handling of noncapturing group prefixes), but it is a starting point, and shows how complex our regular expression syntax is!
 
 {% highlight ruby %}
 %r{
-    (?<unicode_raw>        ){0}
-    (?<identifier>         (?!\g<keyword>)\g<identifier_chars> ){0}
-    (?<identifier_chars>   ){0}
-    (?<keyword>            abstract | continue | for | new | switch | assert | default | if | package | synchronized | boolean | do | goto | private | this | break | double | implements | protected | throw | byte | else | import | public | throws | case | enum | instanceof | return | transient | catch | extends | int | short | try | char | final | interface | static | void | class | finally | long | strictfp | volatile | const | float | native | super | while ){0}
-    (?<>){0}
+    (?<group>       \( (?: \? (?: \g<modifier>*: | ! | = ) | ) \g<root>* \) ){0}
+    (?<modifier>    i | m | x | o ){0}
+    (?<escaped>     \\ (?: \( | \) | \[ | \] | \{ | \} | \. | \? | \+ | \* | \\ | \/ )){0}
+    (?<raw>         [^\\\(\)\[\]\{\}\?\+\*\/]){0}
+    (?<class>       \[ \^? \g<raw>+ \] ){0}
+    (?<matcher>     \g<escaped> | \g<raw> | \g<class> ){0}
+    (?<anchor>      \\ (?: A | z ) | \^ | \$ ){0}
+    (?<quantifier>  \? | \* | \+ | \{ \d+ (?: , (?: \d+ ) )? \} ){0}
+    (?<root>        \g<matcher> \g<quantifier>? | \g<anchor> | \g<group>\g<quantifier>? ){0}
+
+    \A\/ \g<root>* \/ \g<modifier>*\z
 }x
 {% endhighlight %}
 
