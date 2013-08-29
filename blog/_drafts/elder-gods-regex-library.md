@@ -83,15 +83,51 @@ This one frustated me a bit. Turns out the W3C uses SEBNF, which includes some c
 }
 {% endhighlight %}
 
-### A Regex for A Regex
+### Java 1.7:
 
-For single line regexes:
+Built from the JLS reference grammar. I made a few changes to remove left recursion rules, since this is not a LL(1) grammar.
 
 {% highlight ruby %}
 %r{
-    (?<group>    \( (?: \? (?: :| ! | omix) | [^?]) \)){0}
-    (?<metachar> \\ (?: \( | \) | \[ | \] | \{ | \} | \. | \? | \+ | \* | \\)){0}
-    (?<modifier> i | m | x | o){0}
+  (?<identifier>                            (?!\g<keyword>)\g<identifier_chars> ){0}
+  (?<identifier_chars>                      ){0}
+  (?<qualified_identifier>                  \g<identifier> (?: \. \g<identifier> )* ){0}
+  (?<qualified_identifier_list>             \g<qualified_identifier (?: \, \g<qualified_identifier> )* ){0}
+
+  (?<compilation_unit>                      (?: (?: \g<annotations> )? package \g<qualified_identifier> ; )? \g<import_declaration>* \g<type_declaration>* ){0}
+  (?<import_declaration>                    import (?: static )? \g<identifier> (?: \. \g<identifier> )* (?: \. \* )? ){0}
+  (?<type_declaration>                      \g<class_or_interface_declaration> | ; ){0}
+  (?<class_or_interface_declaration>        (?: \g<modifier> )* (?: \g<class_declaration> | \g<interface_declaration> ) ){0}
+  (?<class_declaration>                     \g<normal_class_declaration> | \g<enum_declaration> ){0}
+  (?<interface_declaration>                 \g<normal_interface_declaration> | \g<annotation_type_declaration> ){0}
+  (?<normal_class_declaration>              class \g<identifier> \g<type_parameters>? (?: extends \g<Type> )? (?: implements \g<type_list> )? \g<class_body> ){0}
+  (?<enum_declaration>                      enum \g<identifier> (?: implements \g<type_list> )? \g<enum_body> ){0}
+  (?<normal_interface_declaration>          interface \g<identifier> \g<type_parameters>? (?: extends \g<type_list> )? \g<interface_body> ){0}
+  (?<annotation_type_declaration>           @ interface \g<identifier> \g<annotation_type_body> ){0}
+
+  (?<type>                                  \g<basic_type> (?: \[\] )* | \g<reference_type> (?: \[\] )* ){0}
+  (?<basic_type>                            byte | short | char | int | long | float | double | boolean ){0}
+  (?<reference_type>                        \g<identifier> \g<type_arguments>? (?: \. \g<identifier> \g<type_arguments>? )* ){0}
+  (?<type_arguments>                        < \g<type_argument> (?: , \g<type_argument> )* > ){0}
+  (?<type_argument>                         \g<reference_type> | ? (?: (?: extends | super ) \g<reference_type> )? ){0}
+
+  (?<nonwildcard_type_arguments>            < \g<type_list> > ){0}
+  (?<type_list>                             \g<reference_type (?: , \g<reference_type )* ){0}
+  (?<type_argument_or_diamond>              < > | \g<type_arguments> ){0}
+  (?<nonwildcard_type_arguments_or_diamond> < > | \g<nonwildcard_type_arguments> ){0}
+  (?<type_parameters>                       < \g<type_parameter> (?: , \g<type_parameter> )* > ){0}
+  (?<type_parameter>                        \g<identifier> (?: extends \g<bound> )? ){0}
+  (?<bound>                                 \g<reference_type> (?: & \g<reference_type )* ){0}
+
+  (?<modifier>                              \g<annotation> | public | protected | private | static | abstract | final | native | synchronized | transient | volatile | strictfp ){0}
+  (?<annotations>                           \g<annotation> (?: \g<annotation> )* ){0}
+  (?<annotation>                            @ \g<qualified_identifier> (?: \( \g<annotation_element>? \) )? ){0}
+  (?<annotation_element>                    \g<element_value_pairs> | \g<element_value> ){0}
+  (?<element_value_pairs>                   \g<element_value_pair> (?: \g<element_value_pair> )* ){0}
+  (?<element_value_pair>                    \g<identifier> = \g<element_value> ){0}
+  (?<element_value>                         \g<annotation> | \g<expression1> | \g<element_value_array_initializer> ){0}
+  (?<element_value_array_initializer>       (?: \g<element_values>? ,? )* ){0}
+  (?<element_values>                        \g<element_value> (?: \g<element_value> )* ){0}
 }x
 {% endhighlight %}
 
