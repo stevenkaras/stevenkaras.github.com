@@ -2,28 +2,32 @@
 title: File Format Design
 layout: post
 ---
-Code lives from version to version. Alex from TheDailyWTF pointed out that databases live beyond versions, and may indeed live throughout the lifecycle of an application. It is an easy conclusion that file formats are similar in that regard. File formats tend to fall into two categories: stream-based, variable width records, and fixed width, binary formats.
+Code lives from version to version. Alex from TheDailyWTF pointed out that databases live beyond versions, and may indeed live throughout the lifecycle of an application. It is an easy conclusion that file formats are similar in that regard. File formats tend to fall into two categories: stream-based, variable width records, and fixed width formats. Let's examine some of the advantages of each approach, and hopefully come across some design patterns that we can reuse.
 
-Let's take for example, the case of a variable width format that holds some arbitrary data inside each record. It could take hours, if not longer, to sort, search, or work with this data. However, if we build an index of this data, that is sorted, we can do it much faster. So let's build a basic framework.
+### Fixed width formats
 
-Let's break up our file into two sections. The variable width records will go at the start of the file. It's easier to modify the end of the file, so we'll add new records to the end of the variable width section, and add the fixed-width section at the end. To know where the fixed-width section starts, we'll dump some basic info into a very short header.
+The main advantage of a fixed width format is the ease of indexing. Meaning that we can seek to an arbitrary record number. Aside from that, when the record size is known ahead of time, we can omit that portion of the data structure, and save a marginal amount of space.
 
-The general file format should look like this:
+It can be useful to sort the records according to a particular field, which allows for binary searches through the data.
 
-INSERT IMAGE HERE
+On the other hand, due to the rigid structure, this approach isn't appropriate for inherently variable data types, such as strings.
 
-Where the id field is the file type identifier (traditionally called a magic number). The fw_address field is the offset of the start of the fixed width record section (as a 32bit unsigned integer, stored little endian). The rest of the bytes are reserved for future use (moving up to 64 or 128 bit addresses, flags, etc.).
+### Variable width formats
 
-It's important to remember that when you're talking about a file format, it's perfectly reasonable to define a ton of reserved bytes, even if you don't think you need them. Especially if you don't think you need them. Because an extra 72 bytes may mean a lot when you are talking about a common data structure that's held in memory. The longer you expect your file format to live, the more reserved bytes you should tack on.
+Variable width records are extremely useful for fluid data, such as text, or variable length lists. The primary advantage in this format is the density of data, and is appropriate for string pools.
 
-Let's assume that our variable width records store their length in the first four bytes, which is the length of the data in that record (meaning it does not include the first 4 bytes).
+### Stream based formats
 
-INSERT IMAGE HERE
+The key difference between variable width record formats and stream formats is that stream formats don't assume all records have the same type. That is that the first record could be for a music album, and the next for a restaurant. Most text based formats fall in this category (including html).
 
-The fixed width section has this general format:
+### Hybrid formats
 
-INSERT IMAGE HERE
+It is unreasonable to assume that a file format will ever have only one type of record. That means that we need to compose together in the same file many different record types, and often the need to mix fixed and variable width records will arise. For those of you who prefer to use text based formats, this isn't as relevant.
 
-In the header, we
+There are limits to this, however. To correctly combine different record formats, you should place the fixed width records before the variable width records. However, if you expect the variable width section to grow significantly while the fixed width sections won't, then you can reverse the entire format, and place the variable width records at the start. The fixed width records go at the end, and the entire format is read backwards.
 
-Ok, now that we've fully defined our file format, remember that it is easier (and quicker, sometimes) to store each of those sections as separate files in a zip container (which works much in the same way as this format). But by opening the black box, and looking inside, we've learned a bunch of principles that will help us in the future.
+### mmap() support
+
+In POSIX systems, such as Android or OSX, there's a very efficient function for loading data from the disk. Windows has a comparable equivalent, and works in much the same way. The catch being that not all devices are equal. Some prefer for integers to have 4 bytes, while others prefer 8 bytes. If the format lines up with these expectations and preferences, using mmap can be much more efficient than "parsing" the file.
+
+In order to support this, we can write our reference parser, and then add in a per-device format. When the file is received by the device, it can process the file, and save it in the optimized format. This allows us the flexibility to offer out of the box support for our format, but also allow for highly efficient indexing.
