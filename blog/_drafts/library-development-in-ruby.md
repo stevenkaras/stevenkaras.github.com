@@ -25,21 +25,36 @@ module Foo
   def self.register_module(mod)
     @modules ||= []
     @modules << mod
+    @base_includes.each do |base|
+      base.send :include, mod
+    end if @base_includes
+    @base_extends.each do |base|
+      base.send :extend, mod
+    end
+    @base_prepends.each do |base|
+      base.send :prepend, mod
+    end
   end
 
   def self.included(base)
+    @base_includes ||= []
+    @base_includes << base
     @modules.each do |mod|
       base.send :include, mod
     end if @modules
   end
 
   def self.extended(base)
+    @base_extends ||= []
+    @base_extends << base
     @modules.each do |mod|
       base.send :extend, mod
     end if @modules
   end
 
   def self.prepended(base)
+    @base_prepends ||= []
+    @base_prepends << base
     @modules.each do |mod|
       base.send :prepend, mod
     end if @modules
