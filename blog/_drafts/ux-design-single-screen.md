@@ -1,10 +1,9 @@
 ---
 title: "UX Design Rules: Single Screen"
 layout: post
+categories: [ ux ]
 ---
-This is the first in a series on UX design principles.
-
-Most of my recommendations will use computer games as examples. This is usually where I have found the most violations of my rules, but they apply equally as much (if not more so) to business and web applications.
+This is the first in a series on UX design principles. Most of my recommendations will use computer games as examples. This is usually where I have found the most violations of my rules, but they apply equally as much (if not more so) to business and web applications.
 
 Simple interfaces are good for small data sets, where the amount of data can be summarized in one screen. Once the data goes across more than one screen, more advanced controls are needed. Let's take inventory management in an RPG. So long as the number of items your character is carrying is enough to fit on one screen, it's easy to manage your inventory. However, sometimes it is necessary to manage larger inventories.
 

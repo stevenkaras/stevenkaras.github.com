@@ -1,10 +1,9 @@
 ---
 title: "UX Design Rules: Constant Availability"
 layout: post
+categories: [ ux ]
 ---
-This post is part of a series on UX design principles.
-
-Sometimes it just happens that your app crashes, or needs to finish loading, or something like that. But sometimes only part of your app needs to load. We'll look at several examples from the real world of how to show that a particular element is loading, without blocking access to the rest of your app, which is perfectly available to run.
+This post is part of a series on UX design principles. Sometimes it just happens that your app crashes, or needs to finish loading, or something like that. But sometimes only part of your app needs to load. We'll look at several examples from the real world of how to show that a particular element is loading, without blocking access to the rest of your app, which is perfectly available to run.
 
 First off, let's take a look at a web browser. Most web browsers include JavaScript, which gives web designers the power to display alert boxes. Very early on, there were "browser-death" pages designed to flood the browser with an endless loop of these alerts. Since nothing in the browser could be interacted with until the alert was dismissed, the only way to close the page was to kill the browser process. In early versions, it would even prevent interacting with other browser windows! Needless to say, this was far from ideal.
 

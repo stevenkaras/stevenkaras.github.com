@@ -1,6 +1,7 @@
 ---
 title: "UX Design Rules: To Mode or Not To Mode"
 layout: post
+categories: [ ux ]
 ---
 This post is part of a series on UX design principles.
 
