@@ -50,10 +50,11 @@ This matches most single line regular expressions. It isn't perfect (note the im
 
 XML 1.1 (from the [standard](http://www.w3.org/TR/xml11/))
 
-This one frustated me a bit. Turns out the W3C uses SEBNF, which includes some confusing syntax. In general, you can replace a rule with a call to the relevant group, and exclusion groups into negative lookaheads.
+This one frustated me a bit. Turns out the W3C uses SEBNF, which includes some non-trivial syntax that makes it almost impossible to work with. I've marked the problematic groups with comments.
 
 {% highlight ruby %}
 %r{
+  # This group is the root group, but is also responsible for checking that no restricted chars are used.
   (?<document>        (?! \g<Char>* \g<RestrictedChar> \g<Char>* )
                       \g<prolog> \g<element> \g<Misc>* ){0}
   (?<Char>            [\u{1}-\u{d7ff}] | [\u{e000}-\u{fffd}] | [\u{10000}-\u{10ffff}] ){0}
