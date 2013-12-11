@@ -35,7 +35,7 @@ All that's left is SEO and analytics. Huzzah!
 
 #### Adaptive layout     {#layout}
 
-The trick here is to use some advanced CSS selectors that allow you to test the media width. See the [source](http://github.com/stevenkaras/stevenkaras.github.com/blob/master/css/base.css#L178) for details.
+I based my design on the minimal theme for github pages, although with some rather massive changes. The trick here is to use some advanced CSS selectors that allow you to test the media width. See the [source](http://github.com/stevenkaras/stevenkaras.github.com/blob/master/css/base.css#L178) for details.
 
 #### Google +1           {#plusone}
 
