@@ -1,8 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville);
 
 body {
   padding:50px;
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:'Libre Baskerville', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:15px;
+  line-height:25px;
   color:#444;
   font-weight:400;
 }
@@ -17,16 +19,16 @@ p, ul, ol, table, pre, dl {
 }
 
 h1, h2, h3 {
-  line-height:1.1;
+  line-height:1.2;
 }
 
 h1 {
-  font-size:20px;
+  font-size:24px;
 }
 
 h2 {
   color:#393939;
-  font-size:18px;
+  font-size:19px;
 }
 
 h3, h4, h5, h6 {
@@ -65,6 +67,7 @@ code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
   color:#333;
   font-size:12px;
+  line-height:1.1;
 }
 
 pre {
@@ -106,21 +109,21 @@ header {
 }
 
 header ul {
-  list-style: square;
-  padding: 0;
+  list-style:square;
+  padding:0;
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
+  list-style:none;
+  padding:0;
 }
 
 nav ul li {
-  padding-left: 15px;
+  padding-left:15px;
 }
 
 nav.nav_blog ul a {
-  font-size:11px;
+  font-size:12px;
   padding-top:4px;
 }
 
