@@ -12,10 +12,12 @@
 
 	{% for page in site.pages %}
 		{% if page.layout != nil %}
-		{% if page.layout != 'feed' %}
+		{% if page.layout != 'atom' %}
+		{% if page.layout != 'rss' %}
 		<url>
 			<loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
 		</url>
+		{% endif %}
 		{% endif %}
 		{% endif %}
 	{% endfor %}
