@@ -131,6 +131,10 @@ nav.nav_blog ul a:hover {
   color:#069;
 }
 
+ul.toc {
+  list-style: none;
+}
+
 strong {
   color:#222;
   font-weight:700;
