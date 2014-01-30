@@ -9,7 +9,7 @@ url: http://stevenkaras.github.io
 name: BitRot
 author: Steven Karas
 google_plus: https://plus.google.com/+StevenKaras
-production: true
+production: false
 analytics:
-  enabled: true
+  enabled: false
   property_id: UA-46854062-1
