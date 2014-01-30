@@ -11,8 +11,6 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <div></div>
-    <link rel="stylesheet" type="text/css" href="/css/combined.css" />
   </head>
   <body>
     <div class='wrapper'>
@@ -28,5 +26,13 @@
     </div>
     <script src="/javascripts/scale.fix.js"></script>
     {% include analytics.html %}
+    <script type="text/javascript">
+var stylesheet = document.createElement('link');
+stylesheet.href = '/css/combined.css';
+stylesheet.rel = 'stylesheet';
+stylesheet.type = 'text/css';
+document.getElementsByTagName('head')[0].appendChild(stylesheet);
+    </script>
   </body>
 </html>
+<noscript><link rel="stylesheet" href="/css/combined.css"></noscript>

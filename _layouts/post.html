@@ -5,7 +5,6 @@
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta http-equiv="Content-Language" content="en-us" />
     <title>BitRot | {{ page.title }}</title>
-    <link rel="stylesheet" type="text/css" href="/css/combined.css" />
     <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Atom Feed">
     <link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="RSS Feed">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -38,5 +37,13 @@
       })();
     </script>
     {% include analytics.html %}
+    <script type="text/javascript">
+var stylesheet = document.createElement('link');
+stylesheet.href = '/css/combined.css';
+stylesheet.rel = 'stylesheet';
+stylesheet.type = 'text/css';
+document.getElementsByTagName('head')[0].appendChild(stylesheet);
+    </script>
   </body>
 </html>
+<noscript><link rel="stylesheet" href="/css/combined.css"></noscript>
