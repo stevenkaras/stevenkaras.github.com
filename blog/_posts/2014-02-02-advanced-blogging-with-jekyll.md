@@ -45,7 +45,7 @@ Now that we're playing around with analytics, we can actually do damage (false p
 bundle exec jekyll serve --watch --drafts --config _config_development.yml
 ```
 
-Well, that's kinda a lie. I wrote a script that sits in the _tasks folder of my blog root. So when I want to run the local server, I run `_tasks/serve`. But the heart of the script is that line.
+Well, that's kinda a lie. I wrote a script that sits in the tasks folder of my blog folder. So when I want to run the local server, I run `_tasks/serve`. But the heart of the script is that line.
 
 ## SEO
 
