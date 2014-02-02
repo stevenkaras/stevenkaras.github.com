@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# resolves the path to a file, assuming it exists.
+#
+# if it doesn't, then it is better to use expand_path().
+function resolve_file {
+    pushd . > /dev/null
+    local full_path="${1}"
+    if ([ -h "${full_path}" ]) then
+        while([ -h "${full_path}" ]) do
+        cd $(dirname "$full_path")
+        full_path=$(readlink "${full_path}")
+        done
+    fi
+    cd $(dirname ${full_path}) > /dev/null
+    full_path=$(pwd)
+    popd  > /dev/null
+
+    echo $full_path/$(basename $1)
+}
+
+SCRIPT_PATH=$(resolve_file "${BASH_SOURCE[0]}")
+BLOG_ROOT=$(dirname $(dirname $SCRIPT_PATH))
+
+pushd $BLOG_ROOT
+bundle exec jekyll serve --drafts --watch --config _config_development.yml --trace
+popd
