@@ -6,11 +6,11 @@ I checked homework for the course Introduction to Computer Science at [my univer
 
 The idea behind the library is really simple: provide some methods to ensure compliance to an API, allow unit testing of various features that are somewhat hard to do otherwise, etc. The library currently has 2 sections:
 
-### 1. ReflectionUtil
+# 1. ReflectionUtil
 
 This is the class that houses the methods to ensure API compliance. In our course, students aren't allowed to change the APIs that we give them to implement, and this class makes writing unit tests fairly simple. Unit test examples are of course included.
 
-### 2. IOUtil
+# 2. IOUtil
 
 This utility class can be used to redirect I/O from the stdin/out so that unit tests can be written even for classes in which students need to take input from the user, and output something. Of course, the entire methodology is fairly flawed unless some measure of output compliance is enforced. Otherwise the regexs will cause the TA to commit suicide (regex in Java isn't very nice, but regex isn't very nice at all).
 

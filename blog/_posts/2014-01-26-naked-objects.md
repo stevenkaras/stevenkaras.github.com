@@ -15,21 +15,21 @@ Realistically, this means defining several things:
 * the interfaces between the two
 * a reference implementation of the entire system (showing a thin thread of data model to generated code)
 
-## The reference implementation
+# The reference implementation
 
 NOTE: I haven't started the code for this yet, so it's liable to change before the first public release.
 
-### The data model
+## The data model
 
 I'm going to use JSON for the data model format. Each field should be defined as a type, optionally opening up an object defining multiple properties, such as type, constraints, and whatnot. References to other types are acceptable. Types can range from the generic "Number" to the very specific "uint32le". Aside from the builtin types, fields can reference other types in the system, and should be able to easily define different relationship types (the default being 1:1). Collections can be marked to use collection types, but if bound to a specific number, will use a native array rather than an object collection.
 
 When the model is loaded into memory, we need to check for consistency. This ensures that all the types are defined.
 
-### The template engine
+## The template engine
 
 While other implementations will likely want to use their preferred template engine, I think that Mustache is probably the best bet in this case, to encourage the swift adoption for multiple languages.
 
-## The Templates
+# The Templates
 
 This entire system isn't much use without templates. More importantly, the key to creating an ecosystem is to provide a central distribution point. This is the hard part, and will take up a large amount of the work. The server needs to allow for anyone to upload new templates. Templates should be signed by the user they were uploaded by (don't want a repeat of the rubygems incident). The catch here being that template sets can use one another, leading to dependency hell. Good news is that we can reject circular dependencies. The client should use the central server by default, but it's important to leave the option open to use local/private servers.
 

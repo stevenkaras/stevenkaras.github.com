@@ -6,13 +6,13 @@ I've recently built a mobile application that heavily uses location services. I 
 
 Our application targeted Android first, because the devices are cheaper and the development tools are free. The app displays markers on a map as provided by our server. Our server is a [Rails][rubyonrails] application deployed on [Heroku][heroku]. We used PostgreSQL, without any extensions. Heroku provides a free tier of PostgreSQL, and plenty of upgrade options.
 
-## The Backend
+# The Backend
 
 Our backend was simple. We generated scaffolding for our Place model (GPS coords + metadata), added a quick JSON API controller for getting a list of all the places within some geographical bounds. After that I built a very basic web interface for updating the data without needing to use `rails c`.
 
 One of the things that I wanted to play around with that I didn't get the chance to was to use the [hstore][hstore-rails4] column type as a way to store all the "extra" attributes efficiently (and without unnecessary schema changes)
 
-### Performance and Scaling
+## Performance and Scaling
 
 Once our server was up and running, we started by testing out how well it would handle traffic. Unfortunately, we found out that my laptop could only support around 20 or 30 concurrent users (we tested with [siege][siege]). The good news was that Heroku provided us with much better infrastructure. We still wanted to improve it a little bit, so we grabbed the low hanging fruit:
 
@@ -26,11 +26,11 @@ We had a few extra ideas planned out for the future, but never reached the point
 3. Adding extra indexes in the database on hot fields
 4. Converting the API to use geospatial buckets that could be cached efficiently. Thinking about it now, we should have started out this way.
 
-## The Client
+# The Client
 
 Our client, unlike the server, was somewhat complex. We used Google Maps and Fragments for the UI, and a ContentProvider for caching the locations locally. Google Maps API v2 provides a [SupportMapFragment][gm-mapfrag] that we subclassed to provide an adapter for displaying markers from the provider.
 
-### Google Maps API
+## Google Maps API
 
 I ran into more than a few problems when working with the Maps API. Here are some tips to avoid the same issues we had:
 
@@ -73,7 +73,7 @@ public class MainThread {
 - Avoid adding the fragment directly to the layout. I wasn't able to get a splash screen to display over the map until I changed this to add the fragment programmatically (with our nav drawer).
 - There are more than a few things missing from the API, but there are [several][android-map-utils] [extension][android-map-extensions] libraries that are useful. We didn't use them, but they look great, and can help.
 
-### Performance and Scaling
+## Performance and Scaling
 
 There are a few performance optimizations we made:
 

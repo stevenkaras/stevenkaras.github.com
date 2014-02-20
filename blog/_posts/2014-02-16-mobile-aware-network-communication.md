@@ -6,7 +6,7 @@ There are literally entire books written on how to get data packets from a mobil
 
 Brigand provides you with a handy API for scheduling HTTP requests that can be completed hours or days later. It's goal is to remove the common misconception that an HTTP request is immediate.
 
-## Battery Awareness
+# Battery Awareness
 
 The first thing we want our library to be aware of is battery state and level. For Android, we access the battery status using a simple call (like most of these things, it will require a Context)
 
@@ -50,7 +50,7 @@ if (chargePlug == BatteryManager.BATTERY_PLUGGED_USB) {
 
 At the moment, we don't do it, but we plan on extending this to actually determine the exact amount of power remaining in absolute terms. This will allow us to set policies according to the actual amount of power that will be consumed in order to perform the request.
 
-## Connectivity Awareness
+# Connectivity Awareness
 
 The most important distinction we can make is what type of connectivity we have at the moment. This means differentiating between low power networks, such as WiFi or GPRS, and high power networks, such as HSPA and LTE. For those of you who feel like you are missing out from the alphabet soup here, the basic reasoning is that cellphone radios work in multiple modes, with orders of magnitude of difference in power consumption between modes. This means that each second spent sending data actively chews up hours of equivalent idle time.
 
@@ -121,7 +121,7 @@ if (isConnected) {
 
 Unfortunately, we can't request that Android wake up our app when the device switches to DCH mode, but we can ask to be woken up when connectivity changes and sleep for a short period (about half a minute) until other apps already make the requests. We can also fall back on other triggers to ensure our request is made in a timely fashion.
 
-## Time Awareness
+# Time Awareness
 
 > Time is an illusion; lunchtime doubly so.
 > - Douglas Adams
@@ -130,7 +130,7 @@ However, we silly apes pay enough attention to it that it can make all the diffe
 
 More importantly, it gives us the chance to change our policies after a period of time. This is useful if we need to ensure our data is sent within 30 minutes, but we prefer to not be blamed for battery usage.
 
-## Disabling Application Components
+# Disabling Application Components
 
 Efficiently doing this can result in your application being woken up more often than you'd like. For example, if you don't have any queued transfers, there's no reason to wake up your application. To prevent that happening, you can actually request that Android turn off certain components:
 
@@ -152,7 +152,7 @@ PackageManager pm = context.getPackageManager();
 pm.setComponentEnabledSetting(receiver, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP)
 {% endhighlight %}
 
-## Use Cases
+# Use Cases
 
 The two use cases which need to be power aware are as follows:
 
@@ -161,10 +161,10 @@ The two use cases which need to be power aware are as follows:
 
 Brigand handles the latter case at the moment, but we plan on supporting the former in the future.
 
-## What Brigand is
+# What Brigand is
 
 Brigand is the opportunistic bastard of all communication libraries. It implements most of these strategies, and we plan on adding support in the future for the remainder.
 
-## What Brigand isn't
+# What Brigand isn't
 
 Brigand is not Volley. It isn't a general purpose communication library. It is specifically designed for custom sync protocols and analytics data reporting. Trying to use it for other things will usually result in it destroying your device, drinking your beer, and molesting your cat. Beware.

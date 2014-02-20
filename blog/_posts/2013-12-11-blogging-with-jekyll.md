@@ -11,7 +11,7 @@ The main features that I've built in recent time have been focused on increasing
 * [Mobile compatible layout](#layout)
 * [Google +1](#plusone)
 
-### First, some history
+# First, some history
 
 I've been using various blogging platforms and have moved back and forth from maintaining individual posts over time to writing posts at 3am and publishing without checking, to revising them several times before finally publishing them. This particular site is merely the latest incarnation of my blog, although I did put forth the effort to transfer most of my content to here prior to shuttering my old blog.
 
@@ -23,20 +23,20 @@ From there, it was about adding social features that would increase the chances 
 
 All that's left is SEO and analytics. Huzzah!
 
-#### RSS/Atom Feeds      {#feeds}
+## RSS/Atom Feeds      {#feeds}
 
 [RSS feed of my posts](http://github.com/stevenkaras/stevenkaras.github.com/blob/master/blog/rss.xml) with it's [corresponding layout](http://github.com/stevenkaras/stevenkaras.github.com/blob/master/_layouts/rss.xml)
 
 [Atom feed of my posts](http://github.com/stevenkaras/stevenkaras.github.com/blob/master/blog/atom.xml) with it's [corresponding layout](http://github.com/stevenkaras/stevenkaras.github.com/blob/master/_layouts/atom.xml)
 
-#### Sitemap             {#sitemap}
+## Sitemap             {#sitemap}
 
 [Sitemap source](http://github.com/stevenkaras/stevenkaras.github.com/blob/master/sitemap.xml)
 
-#### Adaptive layout     {#layout}
+## Adaptive layout     {#layout}
 
 I based my design on the minimal theme for github pages, although with some rather massive changes. The trick here is to use some advanced CSS selectors that allow you to test the media width. See the [source](http://github.com/stevenkaras/stevenkaras.github.com/blob/master/css/base.css#L178) for details.
 
-#### Google +1           {#plusone}
+## Google +1           {#plusone}
 
 This was a simple matter of adding the requisite code from Google. They actually make this very easy, although their code is extremely kludgy, and uses tables heavily (turning on the 3D visualizer in Firefox is enlightening)
