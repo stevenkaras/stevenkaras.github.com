@@ -1,5 +1,6 @@
 permalink: /:categories/:title
 pygments: true
+markdown: kramdown
 
 future: false
 exclude: [ 'Gemfile', 'Gemfile.lock' ]
