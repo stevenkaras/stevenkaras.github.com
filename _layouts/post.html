@@ -19,10 +19,11 @@
         {% include nav-pages.html %}
         {% include nav-blog.html %}
       </header>
-      <section>
-        <h1 class="title">{{ page.title }}</h1>
-        <div>By <a href="{{ site.google_plus }}?rel=author">Steven Karas</a> <div class="share_widgets"><div class="g-plusone" data-size="medium" data-href="{{ site.url }}{{ page.url }}"></div></div></div>
-        <div class="content">
+      <section itemscope itemtype="http://schema.org/BlogPosting">
+        <h1 class="title" itemprop="name">{{ page.title }}</h1>
+        <div>By <a href="{{ site.google_plus }}?rel=author" itemprop="author" rel="author">Steven Karas</a> <div class="share_widgets"><div class="g-plusone" data-size="medium" data-href="{{ site.url }}{{ page.url }}"></div></div></div>
+        <span>on <span itemprop="datePublished">{{ page.date | date_to_string }}</span></span>
+        <div class="content" itemprop="articleBody">
             {{ content | replace: "<h1 id='table_of_contents'>Table of Contents</h1>", "<strong>Table of Contents:</strong>" | replace: "<ul style='list-style: none;'>", "<ul class='toc' id='toc'>" }}
         </div>
       </section>
