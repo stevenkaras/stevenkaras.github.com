@@ -6,6 +6,7 @@ future: false
 exclude: [ 'Gemfile', 'Gemfile.lock' ]
 
 url: http://stevenkaras.github.io
+description: "Random thoughts that have collected in the corners of Steven's mind"
 
 name: BitRot
 author: Steven Karas
