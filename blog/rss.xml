@@ -6,6 +6,7 @@ layout: rss
 		<link>{{ site.url }}{{ post.url }}</link>
 		<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
 		<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+		<author>{% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %}</author>
 		
 		<title>{{ post.title }}</title>
 		<description>{{ post.content | xml_escape }}</description>
