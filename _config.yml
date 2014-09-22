@@ -1,5 +1,5 @@
 permalink: /:categories/:title
-pygments: true
+highlighter: pygments
 markdown: kramdown
 
 future: false
