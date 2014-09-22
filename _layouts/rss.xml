@@ -6,8 +6,8 @@
 		<description>{{ site.description }}</description>
 		{% endif %}
 		<language>en-us</language>
-		<pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
-		<lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
+		<pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+		<lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
 
 		<link>{{ site.url }}</link>
 		<atom:link href="{{ site.url }}{{ page.url }}" rel="self" type="application/rss+xml" />
