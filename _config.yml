@@ -15,3 +15,17 @@ production: true
 analytics:
   enabled: true
   property_id: UA-46854062-1
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  -
+    scope:
+      path: ""
+      type: drafts
+    values:
+      layout: post

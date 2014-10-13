@@ -1,11 +1,12 @@
 permalink: /:categories/:title
-pygments: true
+highlighter: pygments
 markdown: kramdown
 
 future: false
 exclude: [ 'Gemfile', 'Gemfile.lock' ]
 
 url: http://stevenkaras.github.io
+description: "Random thoughts that have collected in the corners of Steven's mind"
 
 name: BitRot
 author: Steven Karas
@@ -14,3 +15,17 @@ production: false
 analytics:
   enabled: false
   property_id: UA-46854062-1
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  -
+    scope:
+      path: ""
+      type: drafts
+    values:
+      layout: post
