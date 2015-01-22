@@ -17,7 +17,7 @@ Let's take stock of what I had:
 
 First, you'll need to pull out a dump of each table. I'd suggest saving them in CSV (with a header row).
 
-```ruby
+{% highlight ruby %}
 require 'csv'
 classes = [Foo, Bar]
 classes.each do |klass|
@@ -28,7 +28,7 @@ classes.each do |klass|
     end
   end
 end
-```
+{% endhighlight %}
 
 You run this using the environment for the source database, so it moves the rows you need to move onto your local machine.
 
@@ -36,7 +36,7 @@ You run this using the environment for the source database, so it moves the rows
 
 First, I tried writing a simple script that would create a rails model for each record, triggering validations and callbacks. This is what you'll need to do if you have external dependencies aside from your database, and need for example to add people to mailchimp lists, create mandrill subaccounts, etc.
 
-```ruby
+{% highlight ruby %}
 require 'csv'
 classes = [Foo, Bar]
 mappings = classes.zip([]).map{|k,v|[k,{}]}.to_h
@@ -58,7 +58,7 @@ classes.each do |klass|
     mappings[klass][row[klass.primary_key]] = model.attributes[klass.primary_key]
   end
 end
-```
+{% endhighlight %}
 
 I ran this as test code, and it imported the first 300K records into my local development instance over a few hours, which was acceptable. When we ran it against our production DB, however, the cracks in this approach started to show. ActiveRecord's Postgres adapter has some fatal connectivity issues which are excaserbated by my horrible ISP. It took nearly two days to get through the first 50K records, at which point I decided to look for a new approach to meet our deadline.
 
