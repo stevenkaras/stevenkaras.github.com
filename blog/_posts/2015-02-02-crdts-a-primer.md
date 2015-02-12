@@ -1,5 +1,6 @@
 ---
 title: "CRDTs: A Primer"
+tags: crdt
 ---
 I had some extra time a few weekends ago, and sat down to start implementing CRDTs in Ruby. The idea being that I wanted to have practice implementing them. My plan is to eventually reimplement them for both Postgres as new column types and in C. I'll do a series of posts on different CRDTs, and the differences between the theoretical models and practical implementations. In this post, I'll be going over the general theory that backs CRDTs.
 
