@@ -24,16 +24,16 @@
   </head>
   <body>
     <div class='wrapper'>
-      <header>
+      <header class="entry-unrelated">
         {% include header.html %}
         {% include nav-pages.html %}
         {% include nav-blog.html %}
       </header>
       <section itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 class="title" itemprop="name">{{ page.title }}</h1>
-        <div>By <a href="{{ site.google_plus }}?rel=author" itemprop="author" rel="author">Steven Karas</a> <div class="share_widgets"><div class="g-plusone" data-size="medium" data-href="{{ site.url }}{{ page.url }}"></div></div></div>
-        <span>on <span itemprop="datePublished">{{ page.date | date_to_string }}</span></span>
-        <div class="content" itemprop="articleBody">
+        <h1 class="entry-title title" itemprop="name">{{ page.title }}</h1>
+        <div><span class="byline author vcard">By <a href="{{ site.google_plus }}?rel=author" itemprop="author" rel="author" class="fn">Steven Karas</a></span> <div class="share_widgets"><div class="g-plusone" data-size="medium" data-href="{{ site.url }}{{ page.url }}"></div></div></div>
+        <span>on <span itemprop="datePublished" class="published" datetime="{{ page.date }}">{{ page.date | date_to_string }}</span></span>
+        <div class="content entry-content" itemprop="articleBody">
             {{ content | replace: "<h1 id='table_of_contents'>Table of Contents</h1>", "<strong>Table of Contents:</strong>" | replace: "<ul style='list-style: none;'>", "<ul class='toc' id='toc'>" }}
         </div>
       </section>
