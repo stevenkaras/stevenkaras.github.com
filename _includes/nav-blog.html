@@ -5,4 +5,11 @@
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
+  <form action='http://www.feedio.co/@stevenkaras/verify' id='subscribe_widget_stevenkaras' method='post' style='padding:3px;' target='popupwindow'>
+    <p>Subscribe to all my posts:</p>
+    <p>
+      <input name='email' style='width:140px' type='text' placeholder="jon.doe@example.com">
+      <input type='submit' value='Subscribe'>
+    </p>
+  </form>
 </nav>
