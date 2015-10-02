@@ -1,0 +1,77 @@
+==================================================================
+https://keybase.io/stevenkaras
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://stevenkaras.github.io
+  * I am stevenkaras (https://keybase.io/stevenkaras) on keybase.
+  * I have a public key with fingerprint E751 0CE5 AFA6 EC89 3B84  74BE 65A0 9530 C7A4 9BD2
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.8.20"
+        },
+        "key": {
+            "eldest_kid": "0101ab48dc6f9ff8a4341a8691fcd97baf7895305f1fc51394960cfe1b2d05f14ec90a",
+            "fingerprint": "e7510ce5afa6ec893b8474be65a09530c7a49bd2",
+            "host": "keybase.io",
+            "key_id": "65a09530c7a49bd2",
+            "kid": "0101ab48dc6f9ff8a4341a8691fcd97baf7895305f1fc51394960cfe1b2d05f14ec90a",
+            "uid": "96d55dd54e69e879b5499c8707b73e19",
+            "username": "stevenkaras"
+        },
+        "service": {
+            "hostname": "stevenkaras.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1443786001,
+    "expire_in": 157680000,
+    "prev": "25bf6387f9853a5e7d4f522fb5ce8e3767da90dcc6de75cde6c204a17084f2e8",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owGtkntQVFUcx5e13QkxZGcEH7zWmxnuwHLv7n0umYyIQGkOzWTqkMt9nAu3Xfdu
+uxdw2UAUBYFGIOIxmCgOTbTRjBGbGEaT2mOgdMWGojREgrQpkAGxB0PdSzRTU392
+/jpzzuf3/X2/v3NqHlqiUgeBU/XwJ23HB4L67zCqnaH7dF6IETkPZPFCrF0ADknZ
+Oeh9ALJANuBhaDcwCqLeIXLA+Lxbv8jEQ/nA5RZEh0zBRtJogqGieIVXqoGdA27J
+ahM45RaBEZpBSY7FeYrnSRo1owhN4hTCsxxFMDRPkBRmhjFePsAQM4VSOMzyAGFM
+nHKIApaCabkhLzhygMvpEhSLECAwBGYBRvM0DliSMjMkSqAMwDEaVuRYgkYphjPJ
+hbmiW/pHGGjBqXXB3n/w/7PvvAU5CucwjOMwFOAUIAmKwVCKYkkCJhjCDBBKAd3A
+tTh4twTygcNGu2i3Mlf5Il9ggTJbJcy/IWOOIOXmMX9mc7pESWRFu4zkSpLTbVEk
+JI9TqSkAjHVRzcq0CQ5OHurfHxORUVYSFH0ERc0EicMwEg+B/U7BBayCQmAETsLy
+UhqBfFnThDE8biYJniIxM40BgkN5zGTiGYwFJDATOMHRFMyxLM7Jr8ZyAGdNMEoj
+BEyivAmQkBLwBYcIWVDZJ52jRBNyHLSU5wJQUYU66gFVkFql1aiV36paGhz21xe+
+sGT5PD7iA5DhwehXD27QpOLBY3WPjszGFveOCO/2J1ofi8w21B4QBrRPFlbPDGc+
+u3vP1kLaGn9yed0P83PHPo940Vk8pr+78SVmxqj3Ph7QPpdx4sbVLfU9s6rxm/6d
+1VzrGVtXlO3X866EEvtnmzvEyqy0ZwoitIlDuu92p/iqa7su5TUV23R3yYFzyRMl
+misff7/+04ShN4an1HBcu//Ill9yhYZgzjh8Pyl6W+Q68nAAau3arkmrm47zmIPo
+kLPNB8oK35JMnZMPJ8OmzfYdkZ7Sq+17csv2rjQ03z5c8aUn7NClm6f9UzFnVHDi
+Kdexb8NWlJ49/mY5siMns+jDzD6bs32wck1Me8iF31dtKm4pb7Hp+sbSlj1xlFw6
+R/tDB5Oq+/SHetKvf7HrqZJXUpNe9nZ/EDP9dKakHoho9hl+7AZDa2/trWubioFm
++98+dyRwdKX32vujH6Wk3k7uvLLVEztJb9qYvWb6zm/2QV1W04qR8k593Kh/PzGd
+UTWgjXiNMIRiYY1NTk309o6OGU9/9k8Nlraq846aqmv3eqIMP4u+gvyUi5ENLRml
+ly3a3pCwOfFGeHjpO4Gu3tNfL9PFnDwxOjhuqUxfnR1b+NWtOKLmm/GWXRt8pdXr
+Vk/Ur08oq229eNC/Kuu964/4ZhrhjIrw7on51+9b1mZeTg9MeWe33ZtsbP0D
+=8so7
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/stevenkaras
+
+==================================================================
