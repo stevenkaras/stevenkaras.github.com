@@ -3,7 +3,7 @@ highlighter: pygments
 markdown: kramdown
 
 future: false
-exclude: [ 'Gemfile', 'Gemfile.lock' ]
+exclude: [ 'Gemfile', 'Gemfile.lock', "Icon\r", "config.ru" ]
 
 url: http://stevenkaras.github.io
 description: "Random thoughts that have collected in the corners of Steven's mind"
