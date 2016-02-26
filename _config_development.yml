@@ -1,6 +1,4 @@
 permalink: /:categories/:title
-highlighter: pygments
-markdown: kramdown
 
 future: false
 exclude: [ 'Gemfile', 'Gemfile.lock', "Icon\r", "config.ru" ]
