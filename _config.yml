@@ -1,4 +1,4 @@
-permalink: /:categories/:title
+permalink: /:categories/:title/
 
 future: false
 exclude: [ 'Gemfile', 'Gemfile.lock', "Icon\r", "config.ru" ]
