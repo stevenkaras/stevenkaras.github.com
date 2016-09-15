@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+function do_install() {
+	if [[ -e "$HOME/bashfiles" ]]; then
+		echo "$HOME/bashfiles already exists. Perhaps you meant to run $HOME/bashfiles/install_bashfiles.bash?"
+		return 1
+	fi
+	git clone https://github.com/stevenkaras/bashfiles.git "$HOME/bashfiles"
+	[[ $? != 0 ]] && return $?
+
+	# run the install script
+	"$HOME/bashfiles/install_bashfiles.bash"
+	return $?
+}
+
+do_install "$@"
