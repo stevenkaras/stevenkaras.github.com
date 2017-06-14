@@ -14,6 +14,9 @@ analytics:
   enabled: true
   property_id: UA-46854062-1
 
+kramdown:
+  math_engine: null
+
 defaults:
   -
     scope:
