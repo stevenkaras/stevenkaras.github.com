@@ -14,6 +14,20 @@ layout: default
           {{ post.excerpt }}
         </p>
       </p>
+      {% if post.math %}
+        {% assign math = true %}
+      {% endif %}
     {% endfor %}
   </p>
 </div>
+
+{% if math %}
+<script type="text/javascript">
+var stylesheet = document.createElement('link');
+stylesheet.href = '/css/katex.min.css';
+stylesheet.rel = 'stylesheet';
+stylesheet.type = 'text/css';
+document.getElementsByTagName('head')[0].appendChild(stylesheet);
+</script>
+<script type="text/javascript">{% include js/katex.js %}</script>
+{% endif %}
