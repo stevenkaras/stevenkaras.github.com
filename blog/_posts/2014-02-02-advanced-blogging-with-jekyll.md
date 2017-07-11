@@ -96,4 +96,4 @@ Google really wants to push Google+, so let's play ball and hope they reward us 
 
 I'll continue to improve my platform as I write more, and I'll continue to write posts about how I improve my platform.
 
-[blogging-with-jekyll]: {% post_url 2013-12-11-blogging-with-jekyll %}
+[blogging-with-jekyll]: {% post_url blog/2013-12-11-blogging-with-jekyll %}
