@@ -3,7 +3,7 @@ permalink: /:categories/:title/
 future: false
 exclude: [ 'Gemfile', 'Gemfile.lock', "Icon\r", "config.ru" ]
 
-url: http://stevenkaras.github.io
+url: http://karas.io
 description: "Random thoughts that have collected in the corners of Steven's mind"
 
 name: BitRot
