@@ -1,5 +1,5 @@
 ---
-title: New domain: karas.io
+title: "New domain: karas.io"
 layout: post
 ---
 I recently decided that the time has come for me to register my personal domain and start moving my online presence onto a more self-hosted platform. I'm going to share some of the process, and my plans for the future.
