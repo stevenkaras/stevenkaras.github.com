@@ -85,6 +85,14 @@ This is preformatted text, and formulas like $1 + 2$ should not be rendered.
 
 # Update 20180319:
 
-Github Pages are [forcing][githubpages-jekyll] kramdown to use mathjax by default, which means it will mangle `$$` formulas. This means you should use `\\[` and `\\(` if you want a graceful fallback, and you'll need to add the following to render formulas correctly.
+Github Pages are [forcing][githubpages-jekyll] kramdown to use mathjax by default, which means it will mangle `$$` formulas. This means you should use `\\[` and `\\(` if you want a graceful fallback, and you'll need to add the following to render formulas correctly:
+
+```javascript
+document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+    el.outerHTML = katex.renderToString(el.textContent.replace(/%.*/g, ''), { displayMode: true });
+});
+```
+
+Thanks to Jaakko Luttinen for pointing out the deficiency.
 
 [githubpages-jekyll]: https://help.github.com/articles/configuring-jekyll/
