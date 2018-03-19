@@ -82,3 +82,9 @@ Examples are also possible, by embedding inside preformatted text as below or in
 <pre>
 This is preformatted text, and formulas like $1 + 2$ should not be rendered.
 </pre>
+
+# Update 20180319:
+
+Github Pages are [forcing][githubpages-jekyll] kramdown to use mathjax by default, which means it will mangle `$$` formulas. This means you should use `\\[` and `\\(` if you want a graceful fallback, and you'll need to add the following to render formulas correctly.
+
+[githubpages-jekyll]: https://help.github.com/articles/configuring-jekyll/
