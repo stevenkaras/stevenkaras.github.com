@@ -63,6 +63,12 @@ $$
 }
 $$
 
+This is a second display format formula:
+
+$$
+x = \frac{- b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
 They even work with other delimiters, although the `\[` delimiter needs to be double escaped as `\\[` because it goes through jekyll and kramdown:
 
 \\[
@@ -76,6 +82,3 @@ Examples are also possible, by embedding inside preformatted text as below or in
 <pre>
 This is preformatted text, and formulas like $1 + 2$ should not be rendered.
 </pre>
-
-
-This sentence is just to trigger rebuilding, hopefully now
