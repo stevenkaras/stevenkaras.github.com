@@ -1,7 +1,7 @@
 permalink: /:categories/:title/
 
 future: false
-exclude: [ 'Gemfile', 'Gemfile.lock', "Icon\r", "config.ru" ]
+exclude: [ 'Gemfile', 'Gemfile.lock', "Icon\r", "config.ru", "tmp", ]
 
 url: http://blog.dev
 description: "Random thoughts that have collected in the corners of Steven's mind"
