@@ -1,4 +1,4 @@
-// KaTeX v0.6.0
+// KaTeX v0.7.1
 {% include js/katex.min.js %}
 {% include js/katex.auto-render.min.js %}
 
