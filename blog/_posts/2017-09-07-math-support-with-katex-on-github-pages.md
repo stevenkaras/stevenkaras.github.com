@@ -13,13 +13,11 @@ I host on Github pages, and they don't allow plugins, so I can't use things like
 
 [jekyll-katex]: https://github.com/linjer/jekyll-katex
 
-I'm not expecting to do anything fancy, so basic LaTeX support should suffice.
+I'm not expecting to do anything fancy, so basic \\(\LaTeX\\) support should suffice.
 
 Layout stability is really important. Pages that jump around because they don't specify sizes for async elements can become unreadable, in particular on high latency connections.
 
 Convenience. I despise boilerplate, and enjoy markdown precisely because it's so free-form, and maps quite well back to email conventions that have existed for decades. Embedding formulas already has a semi-standard syntax, so there's no need to reinvent the wheel here.
-
-*[LaTeX]: KaTeX doesn't support the \LaTeX symbol
 
 # MathJax
 
@@ -96,3 +94,9 @@ document.querySelectorAll("script[type='math/tex; mode=display']").forEach(funct
 Thanks to Jaakko Luttinen for pointing out the deficiency.
 
 [githubpages-jekyll]: https://help.github.com/articles/configuring-jekyll/
+
+# Update 20200413:
+
+I upgraded \\(\KaTeX\\) from the ancient version I was using and enabled a copy module that will lift the \\(\LaTeX\\) source to the clipboard.
+Also note that it now supports more glyphs, symbols, and is generally "better".
+However, it also grew in size, mostly as a result of adding font support (based on what I saw while upgrading).
