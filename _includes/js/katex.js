@@ -1,5 +1,6 @@
 // KaTeX v0.9.0
 {% include js/katex.min.js %}
+{% include js/katex.copy-tex.min.js %}
 {% include js/katex.auto-render.min.js %}
 
 document.addEventListener("DOMContentLoaded", function() {
