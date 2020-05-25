@@ -8,7 +8,7 @@ title: Blog Post List
   <h1 class="section_header">All Blog Posts</h1>
   <ul class="post_list">
   {% for post in site.categories.blog %}
-    <li itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting"><strong><a href="{{ post.url }}" itemprop="url"><span itemprop="name">{{ post.title }}</span></a></strong>
+    <li itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting"><strong>{% if post.path contains "blog/_drafts" %}Draft: {% endif %}<a href="{{ post.url }}" itemprop="url"><span itemprop="name">{{ post.title }}</span></a></strong>
       <span class="post_date">Posted on <span itemprop="datePublished">{{ post.date | date_to_string }}</span></span>
     </li>
   {% endfor %}

@@ -34,7 +34,7 @@
         <div><span class="byline author vcard">By <a href="{{ site.google_plus }}?rel=author" itemprop="author" rel="author" class="fn">Steven Karas</a></span> <div class="share_widgets"><div class="g-plusone" data-size="medium" data-href="{{ site.url }}{{ page.url }}"></div></div></div>
         <span>on <span itemprop="datePublished" class="published" datetime="{{ page.date }}">{{ page.date | date_to_string }}</span></span>
         <div class="content entry-content" itemprop="articleBody">
-            {{ content | replace: "<h1 id='table_of_contents'>Table of Contents</h1>", "<strong>Table of Contents:</strong>" | replace: "<ul style='list-style: none;'>", "<ul class='toc' id='toc'>" }}
+          {{ content | replace: "<h1 id='table_of_contents'>Table of Contents</h1>", "<strong>Table of Contents:</strong>" | replace: "<ul style='list-style: none;'>", "<ul class='toc' id='toc'>" }}
         </div>
       </section>
       <footer>{% include footer.html %}</footer>
