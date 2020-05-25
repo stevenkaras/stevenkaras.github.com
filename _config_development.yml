@@ -10,6 +10,7 @@ name: BitRot
 author: Steven Karas
 google_plus: https://plus.google.com/+StevenKaras
 production: false
+show_drafts: true
 analytics:
   enabled: false
   property_id: UA-46854062-1
