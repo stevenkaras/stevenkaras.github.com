@@ -61,6 +61,7 @@ We still don't have a clear picture of exactly how or why this happened, but it 
 
 * some people mentioned the `intr` mount option. From the FUSE manpage:
 > Allow requests to be interrupted.  Turning on this option may result in unexpected behavior, if the filesystem does not support request interruption.
+
 So that seems like an endorsement of this not being a viable mitigation.
 
 * Convince mlocate to support more complex patterns for the `PRUNEFS` blacklist
