@@ -180,6 +180,10 @@ section {
   padding-bottom:50px;
 }
 
+div.entry-content {
+  margin-top: 1em;
+}
+
 p.post_excerpt strong {
   font-size: 20px;
 }
